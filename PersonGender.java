@@ -16,7 +16,7 @@ class Woman implements PersonGender {
 	public double Calories(){
 		return 655+(9.5*weight)+(1.8*height)-(4.7*age);
 	}
-	public void PFC(double level, double slimming){
+	public void PFC(double level,double slimming){
 		System.out.println("Количесво еды должно быть в пределах " + Math.rint(((this.Calories()*level)* slimming)) + " ккал");
 		System.out.println("Белков " + Math.rint(((((this.Calories()*level)* slimming)*0.30)/4)) + " г");
 		System.out.println("Жиров " + Math.rint(((((this.Calories()*level)* slimming)*0.15)/9)) + " г");

@@ -6,8 +6,8 @@ public class Demo {
 	public static void main(String[] args){
 		@SuppressWarnings("resource")
 		Scanner sr = new Scanner(System.in);
-		int a, b, age, gender, level;
-		double weight, height, lev = 0;	
+		int slimming, p, age, gender, level;
+		double weight, height,lev = 0,slim = 0;
 		System.out.println("Ваш вес в кг: ");
 		weight=sr.nextDouble();
 		System.out.println("Ваш рост в см: ");
@@ -21,231 +21,52 @@ public class Demo {
 		System.out.println("4 - 5-7 раз в неделю тренировки или тяжелая работа ");
 		level=sr.nextInt();
 		switch(level){
-		case 1: lev=1.2; break;
-		case 2: lev=1.38; break;
-		case 3: lev=1.55; break;
-		case 4: lev=1.73; break;
+		case 1:{lev=1.2;}break;
+		case 2:{lev=1.38;}break;
+		case 3:{lev=1.55;}break;
+		case 4:{lev=1.73;}break;
 		}
 		System.out.println("Ваш пол: ");
 		System.out.println("1 - женский ");
 		System.out.println("2 - мужской ");
 		gender=sr.nextInt();
+		PersonGender person = null;
 		switch(gender){
-		case 1:
-		{
-			Woman female=new Woman(weight,height,age);
-			System.out.println("Ваша цель.");
-			System.out.println("1 - Снижение веса.");
-			System.out.println("2 - Набор веса (мышечной массы).");
-			System.out.println("3 - Поддержание веса.");
-			a=sr.nextInt();
-			switch(a){
-			case 1: {
-				System.out.println("План питания");
-				System.out.println("1 - Базовый.");
-				System.out.println("2 - Расширенный.");
-				System.out.println("3 - Индивидуальный.");
-				b=sr.nextInt();
-				switch(b){
-				case 1:{
-					System.out.println("");
-					female.PFC(lev,0.8);
-					System.out.println("");
-					System.out.println("Получить нужный результат вам помогут");
-					BasicProgram pr=new BasicProgram();
-					pr.getInfoLoss();
-					System.out.println("");
-					System.out.println("Для корректировки плана питания обратитесь к своему тренеру.");
-				}break;
-				case 2:{
-					System.out.println("");
-					female.PFC(lev,0.8);
-					System.out.println("");
-					System.out.println("Получить нужный результат вам помогут");
-					ExpandedProgram pr=new ExpandedProgram();
-					pr.getInfoLoss();
-					System.out.println("");
-					System.out.println("Для корректировки плана питания обратитесь к своему тренеру.");
-				}break;
-				case 3:
-				{
-					System.out.println("");
-					female.PFC(lev,0.8);
-					System.out.println("");
-					System.out.println("Получить нужный результат вам помогут");
-					IndividuallyProgram pr=new IndividuallyProgram();
-					pr.getInfoLoss();
-					System.out.println("");
-					System.out.println("Для корректировки плана питания обратитесь к своему тренеру.");
-				}break;
-				}
-			}break;
-			case 2:
-			{
-				System.out.println("План питания");
-				System.out.println("1 - Базовый.");
-				System.out.println("2 - Индивидуальный.");
-				b=sr.nextInt();
-				switch(b){
-				case 1:{
-					System.out.println("");
-					female.PFC(lev,1.2);
-					System.out.println("");
-					System.out.println("Получить нужный результат вам помогут");
-					BasicProgram pr=new BasicProgram();
-					pr.getInfoGaining();
-					System.out.println("");
-					System.out.println("Для корректировки плана питания обратитесь к своему тренеру.");
-				}break;
-				case 2:{
-					System.out.println("");
-					female.PFC(lev,1.2);
-					System.out.println("");
-					System.out.println("Получить нужный результат вам помогут");
-					IndividuallyProgram pr=new IndividuallyProgram();
-					pr.getInfoGaining();
-					System.out.println("");
-					System.out.println("Для корректировки плана питания обратитесь к своему тренеру.");
-				}break;
-				}
-			}break;
-			case 3: {
-				System.out.println("План питания");
-				System.out.println("1 - Базовый.");
-				System.out.println("2 - Индивидуальный.");
-				b=sr.nextInt();
-				switch(b){
-				case 1:{
-					System.out.println("");
-					female.PFC(lev,1.0);
-					System.out.println("");
-					System.out.println("Получить нужный результат вам помогут");
-					BasicProgram pr=new BasicProgram();
-					pr.getInfoMaintenance();
-					System.out.println("");
-					System.out.println("Для корректировки плана питания обратитесь к своему тренеру.");
-				}break;
-				case 2:{
-					System.out.println("");
-					female.PFC(lev,1.0);
-					System.out.println("");
-					System.out.println("Получить нужный результат вам помогут");
-					IndividuallyProgram pr=new IndividuallyProgram();
-					pr.getInfoMaintenance();
-					System.out.println("");
-					System.out.println("Для корректировки плана питания обратитесь к своему тренеру.");
-				}break;
-				}
-			}
-			}
-		}break;
-		case 2:{
-			Man male=new Man(weight,height,age);
-			System.out.println("Ваша цель.");
-			System.out.println("1 - Снижение веса.");
-			System.out.println("2 - Набор веса (мышечной массы).");
-			System.out.println("3 - Поддержание веса.");
-			a=sr.nextInt();
-			switch(a){
-			case 1: {
-				System.out.println("План питания");
-				System.out.println("1 - Базовый.");
-				System.out.println("2 - Расширенный.");
-				System.out.println("3 - Индивидуальный.");
-				b=sr.nextInt();
-				switch(b){
-				case 1:{
-					System.out.println("");
-					male.PFC(lev,0.8);
-					System.out.println("");
-					System.out.println("Получить нужный результат вам помогут");
-					BasicProgram pr=new BasicProgram();
-					pr.getInfoLoss();
-					System.out.println("");
-					System.out.println("Для корректировки плана питания обратитесь к своему тренеру.");
-				}break;
-				case 2:{
-					System.out.println("");
-					male.PFC(lev,0.8);
-					System.out.println("");
-					System.out.println("Получить нужный результат вам помогут");
-					ExpandedProgram pr=new ExpandedProgram();
-					pr.getInfoLoss();
-					System.out.println("");
-					System.out.println("Для корректировки плана питания обратитесь к своему тренеру.");
-				}break;
-				case 3:
-				{
-					System.out.println("");
-					male.PFC(lev,0.8);
-					System.out.println("");
-					System.out.println("Получить нужный результат вам помогут");
-					IndividuallyProgram pr=new IndividuallyProgram();
-					pr.getInfoLoss();
-					System.out.println("");
-					System.out.println("Для корректировки плана питания обратитесь к своему тренеру.");
-				}break;
-				}
-			}break;
-			case 2:
-			{
-				System.out.println("План питания");
-				System.out.println("1 - Базовый.");
-				System.out.println("2 - Индивидуальный.");
-				b=sr.nextInt();
-				switch(b){
-				case 1:{
-					System.out.println("");
-					male.PFC(lev,1.2);
-					System.out.println("");
-					System.out.println("Получить нужный результат вам помогут");
-					BasicProgram pr=new BasicProgram();
-					pr.getInfoGaining();
-					System.out.println("");
-					System.out.println("Для корректировки плана питания обратитесь к своему тренеру.");
-				}break;
-				case 2:{
-					System.out.println("");
-					male.PFC(lev,1.2);
-					System.out.println("");
-					System.out.println("Получить нужный результат вам помогут");
-					IndividuallyProgram pr=new IndividuallyProgram();
-					pr.getInfoGaining();
-					System.out.println("");
-					System.out.println("Для корректировки плана питания обратитесь к своему тренеру.");
-				}break;
-				}
-			}break;
-			case 3: {
-				System.out.println("План питания");
-				System.out.println("1 - Базовый.");
-				System.out.println("2 - Индивидуальный.");
-				b=sr.nextInt();
-				switch(b){
-				case 1:{
-					System.out.println("");
-					male.PFC(lev,1.0);
-					System.out.println("");
-					System.out.println("Получить нужный результат вам помогут");
-					BasicProgram pr=new BasicProgram();
-					pr.getInfoMaintenance();
-					System.out.println("");
-					System.out.println("Для корректировки плана питания обратитесь к своему тренеру.");
-				}break;
-				case 2:{
-					System.out.println("");
-					male.PFC(lev,1.0);
-					System.out.println("");
-					System.out.println("Получить нужный результат вам помогут");
-					IndividuallyProgram pr=new IndividuallyProgram();
-					pr.getInfoMaintenance();
-					System.out.println("");
-					System.out.println("Для корректировки плана питания обратитесь к своему тренеру.");
-				}break;
-				}
-			}
-			}
+		case 1:{person=new Woman(weight,height,age);}break;
+		case 2:{person=new Man(weight,height,age);}break;
 		}
+		System.out.println("Ваша цель.");
+		System.out.println("1 - Снижение веса.");
+		System.out.println("2 - Набор веса (мышечной массы).");
+		System.out.println("3 - Поддержание веса.");
+		slimming=sr.nextInt();
+		switch(slimming){
+		case 1:{slim=0.8;}break;
+		case 2:{slim=1.2;}break;
+		case 3:{slim=1.0;}break;
 		}
+		System.out.println("План питания");
+		System.out.println("1 - Базовый(для снижения веса, набора веса, поддержания веса).");
+		System.out.println("2 - Расширенный(для снижения веса, поддержания веса).");
+		System.out.println("3 - Индивидуальный(для снижения веса, набора веса, поддержания веса).");
+		p=sr.nextInt();
+		WeightLoss plan = null;
+		switch(p){
+		case 1:{plan=new BasicProgram();}break;
+		case 2:{plan=new ExpandedProgram();}break;
+		case 3:{plan=new IndividuallyProgram();}break;
+		}
+		System.out.println("");
+		person.PFC(lev,slim);
+		System.out.println("");
+		System.out.println("Получить нужный результат вам помогут");
+		switch(slimming){
+		case 1:{plan.getInfoLoss();}break;
+		case 2:{plan.getInfoGaining();}break;
+		case 3:{plan.getInfoMaintenance();}break;
+		}
+		System.out.println("");
+		System.out.println("Для корректировки плана питания обратитесь к своему тренеру.");	
 	}
+	
 }
